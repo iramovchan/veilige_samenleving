@@ -1,0 +1,63 @@
+* {
+    margin: 5px;
+    padding: 0px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+#header {
+    /*background-color: rgb(17, 75, 95);*/
+    color: rgb(198, 218, 191);
+    text-align: center;
+    display: inline-block;
+    width: 25%;
+    float: left;
+}
+
+hr {
+    display: block;
+    clear: both;
+    color: rgb(198, 218, 191);
+}
+
+
+
+ul {
+    list-style-type: none;
+    width: 100%;
+}
+
+li {
+    float: right;
+    width: 25%;
+
+}
+
+li a {
+    padding: 10px;
+    display: block;
+    color: rgb(198, 218, 191);
+    text-decoration: none;
+    text-align: center;
+}
+
+li:hover:not(.active) {
+    background-color: rgb(26, 147, 111);
+}
+
+.active {
+    background-color: rgb(26, 147, 111);
+}
+
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
