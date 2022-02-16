@@ -42,7 +42,7 @@ li {
 
 .links {
     float: right;
-    width: 25%;
+    width: 15%;
 
 }
 
@@ -69,6 +69,8 @@ li a {
 
 #big_img {
     width: 25%;
+    float: left;
+
 }
 
 
@@ -77,4 +79,8 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+h1 {
+    display: inline-block;
 }
