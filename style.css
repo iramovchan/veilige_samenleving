@@ -11,14 +11,11 @@ body {
 }
 
 #header {
-    padding: 10px;
+    padding: 9px;
     display: block;
-
     text-decoration: none;
-
-    color: rgb(198, 218, 191);
-    text-align: center;
-    /*width: 25%;*/
+    color: rgb(244, 208, 111);
+    /*text-align: center;*/
     float: left;
 }
 
@@ -35,10 +32,6 @@ ul {
     width: 100%;
 }
 
-li {
-    float: left;
-
-}
 
 .links {
     float: right;
@@ -49,17 +42,17 @@ li {
 li a {
     padding: 10px;
     display: block;
-    color: rgb(198, 218, 191);
+    color: rgb(6, 7, 14);
     text-decoration: none;
     text-align: center;
 }
 
 .links:hover:not(.active) {
-    background-color: rgb(26, 147, 111);
+    background-color: rgb(244, 208, 111);
 }
 
 .active {
-    background-color: rgb(26, 147, 111);
+    background-color: rgb(244, 208, 111);
 }
 
 #logo_img {
