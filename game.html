@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Veilige samenleving</title>
     <link href="style.css" rel="stylesheet"/>
+    <script src="game.js" defer></script>
 
 </head>
-<body>
+<body onload="startGame()">
 
     <nav>
         <img id="logo_img" src="robot_logo.png">
@@ -21,6 +22,9 @@
         </ul>
         <hr>
     </nav>
+
+
+    <canvas id="Canvas" width="700" height="500"></canvas>
 
 
     <footer><hr>© 2022 MML – All right reserved</footer>

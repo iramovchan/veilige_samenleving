@@ -77,3 +77,17 @@ footer {
 h1 {
     display: inline-block;
 }
+
+p {
+    text-align: center;
+    padding: 5px;
+    margin-left: 30xpx;
+}
+
+
+canvas {
+    border: 2px solid black;
+    background-color: rgb(244, 208, 111);
+    display: block;
+    margin: 0 auto;
+}
