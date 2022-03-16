@@ -87,10 +87,3 @@ p {
     margin-right: 2%;
 }
 
-
-canvas {
-    border: 2px solid black;
-    background-color: rgb(244, 208, 111);
-    display: block;
-    margin: 0 auto;
-}

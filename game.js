@@ -1,27 +1,40 @@
-var canvas = document.getElementById("Canvas");
-var ctx = canvas.getContext("2d");
+var xCnsSize = 700;
+var yCnsSize = 500;
 
-var x = canvas.width/2;
-var y = canvas.height/2;
+var xRobot = xCnsSize/2;
+var yRobot = yCnsSize/2;
 
 var dx = 2;
 var dy = -2;
 
-function draw_circle() {
-    ctx.beginPath();
-    //first two - x and y coordinates of the arc's center
-    //third - arc radius
-    //start angle and end angle (what angle to start and finish drawing the circle, in radians)
-    //direction of drawing (false for clockwise, the default, or true for anti-clockwise.) This last parameter is optional.
-    ctx.arc(x, y, 20, 0, Math.PI*2, false);
-    ctx.fillStyle = "green";
-    ctx.fill();
-    ctx.closePath();
+var cns;
+
+function centerCanvas() {
+    var xCns = (windowWidth - width) / 2;
+    var yCns = (windowHeight - height) / 2;
+    cns.position(xCns, yCns);
+}
+
+function setup() {
+    cns = createCanvas(xCnsSize, yCnsSize);
+    centerCanvas()
+}
+
+function windowResized() {
+    centerCanvas()
 }
 
 function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    draw_circle()
-    x += dx;
-    y += dy;
-}
+    background(244, 208, 111);
+
+    strokeWeight(5);
+
+    fill(219, 53, 53);
+    ellipse(xRobot, yRobot, 100, 100)
+
+    fill(0, 0, 0);
+    ellipse(xRobot, yRobot, 50, 50);
+
+    xRobot += dx;
+
+};
