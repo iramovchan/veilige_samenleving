@@ -25,28 +25,3 @@ function draw() {
     x += dx;
     y += dy;
 }
-
-//drawfunction will be called every 10 milliseconds
-setInterval(draw, 10)
-
-
-////instructions are between beginPath and closePath
-//ctx.beginPath();
-////first two - coordinates of top left cornen third - width, fourth - height
-//ctx.rect(20, 40, 50, 50);
-////fillStyle - stores a color for later
-////a color can be hexa value, word or rgba()
-//ctx.fillStyle = "#FFFF00";
-////fills in a shape with a color from fillStyle
-//ctx.fill();
-//ctx.closePath();
-//
-
-//
-//
-//ctx.beginPath();
-//ctx.rect(160, 10, 100, 40);
-//ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
-////only fill in the outer stroke
-//ctx.stroke();
-//ctx.closePath();

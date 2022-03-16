@@ -79,9 +79,12 @@ h1 {
 }
 
 p {
-    text-align: center;
     padding: 5px;
-    margin-left: 30xpx;
+    display: block;
+    line-height: 30px;
+    font-size: 18px;
+    margin-left: 27%;
+    margin-right: 2%;
 }
 
 
