@@ -4,8 +4,7 @@ var yCnsSize = 500;
 var xRobot = xCnsSize/2;
 var yRobot = yCnsSize/2;
 
-var dx = 2;
-var dy = -2;
+var speed = 2;
 
 var cns;
 
@@ -35,6 +34,24 @@ function draw() {
     fill(0, 0, 0);
     ellipse(xRobot, yRobot, 50, 50);
 
-    xRobot += dx;
+    if (keyIsDown(UP_ARROW)){
+        yRobot -= speed;
+    } else if (keyIsDown(DOWN_ARROW)){
+        yRobot += speed;
+    } else if (keyIsDown(LEFT_ARROW)){
+        xRobot -= speed;
+    } else if (keyIsDown(RIGHT_ARROW)){
+        xRobot += speed;
+    }
+
 
 };
+
+
+
+// blikjes class
+// botsing met blikjes
+// als je botst met blikje heb je een kleine blikje op jou
+// groene zone toevoegen
+// als je groene zone aanraakt met een blikje dan wordt het blikje daar gezet
+// score
