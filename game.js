@@ -29,11 +29,25 @@ function draw() {
     strokeWeight(5);
 
     fill(219, 53, 53);
-    ellipse(xRobot, yRobot, 100, 100)
+    ellipse(xRobot, yRobot, 75, 75)
 
     fill(0, 0, 0);
-    ellipse(xRobot, yRobot, 50, 50);
-
+    ellipse(xRobot, yRobot, 27, 27);
+    // if (xRobot > width - radius || xRobot < radius){
+    //   xSpeed = 0;
+    // }
+    // if (yRobot > height - radius || yRobot < radius){
+    //   ySpeed = 0;
+    // }
+    // xRobot += xSpeed;
+    // yRobot += ySpeed;
+    // ellipse(xRobot, yRobot, 2*radius, 2*radius);
+    if (xRobot > width || xRobot < 0){
+      speed = 0;
+    }
+    if (yRobot > height || yRobot < 0){
+      speed = 0;
+    }
     if (keyIsDown(UP_ARROW)){
         yRobot -= speed;
     } else if (keyIsDown(DOWN_ARROW)){
@@ -43,8 +57,6 @@ function draw() {
     } else if (keyIsDown(RIGHT_ARROW)){
         xRobot += speed;
     }
-
-
 };
 
 
