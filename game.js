@@ -49,9 +49,9 @@ function draw() {
 
 
 
-// blikjes class
+// blikjes class - Eline
 // botsing met blikjes
 // als je botst met blikje heb je een kleine blikje op jou
-// groene zone toevoegen
-// als je groene zone aanraakt met een blikje dan wordt het blikje daar gezet
-// score
+// groene zone toevoegen - Eline
+// als je groene zone aanraakt met een blikje dan wordt het blikje daar gezets
+// score - Eline
