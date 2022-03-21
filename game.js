@@ -4,9 +4,11 @@ var yCnsSize = 500;
 var xRobot = xCnsSize/2;
 var yRobot = yCnsSize/2;
 
-var speed = 2;
+var move = 2;
 
 var cns;
+
+var radius = 40;
 
 function centerCanvas() {
     var xCns = (windowWidth - width) / 2;
@@ -24,39 +26,56 @@ function windowResized() {
 }
 
 function draw() {
+    if (keyIsDown(UP_ARROW)){
+        yRobot -= move;
+    } else if (keyIsDown(DOWN_ARROW)){
+        yRobot += move;
+    } else if (keyIsDown(LEFT_ARROW)){
+        xRobot -= move;
+    } else if (keyIsDown(RIGHT_ARROW)){
+        xRobot += move;
+    }
     background(244, 208, 111);
 
     strokeWeight(5);
 
     fill(219, 53, 53);
-    ellipse(xRobot, yRobot, 75, 75)
+    ellipse(xRobot, yRobot, 2*radius, 2*radius)
 
     fill(0, 0, 0);
     ellipse(xRobot, yRobot, 27, 27);
-    // if (xRobot > width - radius || xRobot < radius){
-    //   xSpeed = 0;
-    // }
-    // if (yRobot > height - radius || yRobot < radius){
-    //   ySpeed = 0;
-    // }
-    // xRobot += xSpeed;
-    // yRobot += ySpeed;
-    // ellipse(xRobot, yRobot, 2*radius, 2*radius);
-    if (xRobot > width || xRobot < 0){
-      speed = 0;
+
+
+    // oude code -
+    // het werkte niet want de snelheid was gewoon nul geworden en als je pijlen gebruikt om te bewegen,
+    //was het gewoon x/yRobot +/- 0 - dus het veranderde gewoon niet meer
+
+//    if (xRobot > width || xRobot < 0){
+//      speed = 0;
+//    }
+//    if (yRobot > height || yRobot < 0){
+//      speed = 0;
+
+    // xRobot en yRobot zijn eigenlijk de cordinaten van het midden van de cirkel
+    // radius is de helft van de cirkel breedte/hoogte
+    // en het zwarte randje rondom de cirkel is vijf pixels
+    //als de robot het rand aanraakt verplaatsen we die met 2 pixels terug
+    // left edge
+    if (xRobot < 0 + radius + 5){
+        xRobot += move;
+    //right edge
+    } else if (xRobot > width - radius - 5){
+        xRobot -= move;
     }
-    if (yRobot > height || yRobot < 0){
-      speed = 0;
+    //top edge
+    if (yRobot < 0 + radius + 5){
+        yRobot += move;
+
+    //bottom edge
+    } else if (yRobot > height - radius - 5){
+        yRobot -= move;
     }
-    if (keyIsDown(UP_ARROW)){
-        yRobot -= speed;
-    } else if (keyIsDown(DOWN_ARROW)){
-        yRobot += speed;
-    } else if (keyIsDown(LEFT_ARROW)){
-        xRobot -= speed;
-    } else if (keyIsDown(RIGHT_ARROW)){
-        xRobot += speed;
-    }
+
 };
 
 
