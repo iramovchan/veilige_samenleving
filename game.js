@@ -31,9 +31,6 @@ function windowResized() {
     centerCanvas()
 }
 
-
-
-
 function draw() {
     if (keyIsDown(UP_ARROW)){
         yRobot -= move;
@@ -46,13 +43,13 @@ function draw() {
     }
     background(244, 208, 111);
 
-    fill("darkgreen")
-    rect(539,339,150,150)
+    fill("darkgreen");
+    rect(539,339,150,150);
 
     strokeWeight(5);
 
     fill(219, 53, 53);
-    ellipse(xRobot, yRobot, 2*radius, 2*radius)
+    ellipse(xRobot, yRobot, 2*radius, 2*radius);
 
     fill(0, 0, 0);
     ellipse(xRobot, yRobot, 27, 27);
@@ -64,11 +61,7 @@ function draw() {
     // het werkte niet want de snelheid was gewoon nul geworden en als je pijlen gebruikt om te bewegen,
     //was het gewoon x/yRobot +/- 0 - dus het veranderde gewoon niet meer
 
-//    if (xRobot > width || xRobot < 0){
-//      speed = 0;
-//    }
-//    if (yRobot > height || yRobot < 0){
-//      speed = 0;
+
 
     // xRobot en yRobot zijn eigenlijk de cordinaten van het midden van de cirkel
     // radius is de helft van de cirkel breedte/hoogte
@@ -90,7 +83,7 @@ function draw() {
         yRobot -= move;
     }
 
-    
+
 
 };
 
