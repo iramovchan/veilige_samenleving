@@ -18,20 +18,19 @@ function centerCanvas() {
 
 let img;
 function preload() {
-  img = loadImage('can.png');
+    img = loadImage('can.png');
 }
 
 function setup() {
+    preload();
     cns = createCanvas(xCnsSize, yCnsSize);
     centerCanvas()
-    image(img, 100, 100);
+
 }
 
 function windowResized() {
     centerCanvas()
 }
-
-
 
 
 function draw() {
@@ -57,23 +56,9 @@ function draw() {
     fill(0, 0, 0);
     ellipse(xRobot, yRobot, 27, 27);
 
+    image(img, 100, 100, 54, 62);
 
 
-
-    // oude code -
-    // het werkte niet want de snelheid was gewoon nul geworden en als je pijlen gebruikt om te bewegen,
-    //was het gewoon x/yRobot +/- 0 - dus het veranderde gewoon niet meer
-
-//    if (xRobot > width || xRobot < 0){
-//      speed = 0;
-//    }
-//    if (yRobot > height || yRobot < 0){
-//      speed = 0;
-
-    // xRobot en yRobot zijn eigenlijk de cordinaten van het midden van de cirkel
-    // radius is de helft van de cirkel breedte/hoogte
-    // en het zwarte randje rondom de cirkel is vijf pixels
-    //als de robot het rand aanraakt verplaatsen we die met 2 pixels terug
     // left edge
     if (xRobot < 0 + radius + 5){
         xRobot += move;
