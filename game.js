@@ -16,14 +16,23 @@ function centerCanvas() {
     cns.position(xCns, yCns);
 }
 
+let img;
+function preload() {
+  img = loadImage('can.png');
+}
+
 function setup() {
     cns = createCanvas(xCnsSize, yCnsSize);
     centerCanvas()
+    image(img, 100, 100);
 }
 
 function windowResized() {
     centerCanvas()
 }
+
+
+
 
 function draw() {
     if (keyIsDown(UP_ARROW)){
