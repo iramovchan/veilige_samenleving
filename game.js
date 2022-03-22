@@ -37,6 +37,9 @@ function draw() {
     }
     background(244, 208, 111);
 
+    fill("darkgreen")
+    rect(539,339,150,150)
+
     strokeWeight(5);
 
     fill(219, 53, 53);
@@ -44,6 +47,8 @@ function draw() {
 
     fill(0, 0, 0);
     ellipse(xRobot, yRobot, 27, 27);
+
+
 
 
     // oude code -
