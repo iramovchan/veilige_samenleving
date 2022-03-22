@@ -76,6 +76,8 @@ function draw() {
         yRobot -= move;
     }
 
+    
+
 };
 
 
