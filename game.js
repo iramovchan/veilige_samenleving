@@ -48,12 +48,12 @@ function draw() {
     }
     background(244, 208, 111);
 
-    fill("darkgreen");
+    fill(96, 108, 56);
     rect(539,339,150,150);
 
     strokeWeight(5);
 
-    fill(219, 53, 53);
+    fill(195, 66, 63);
     ellipse(xRobot, yRobot, 2*radius, 2*radius);
 
     fill(0, 0, 0);
