@@ -3,6 +3,9 @@ var yCnsSize = 500;
 
 var xRobot = xCnsSize/2;
 var yRobot = yCnsSize/2;
+//
+//var widthCan = 54;
+//var heightCan = 62;
 
 var move = 2;
 
@@ -92,9 +95,17 @@ function draw() {
         yRobot -= move;
     }
 
+<<<<<<< HEAD
+=======
+//    if xRobot
+//    if (!(x2 > x1 + lengte || x1 > x2 + lengte || y2 > y1 + breedte || y1 > y2 + breedte)){
+//    //Botsing!
+//    }
+>>>>>>> 3dfabe8e50ac83946967b342c777faa2467f7956
 
 
 };
+
 
 
 
