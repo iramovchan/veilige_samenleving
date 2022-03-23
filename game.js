@@ -35,10 +35,7 @@ function windowResized() {
     centerCanvas()
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 001365c9ee8e1c8b89d2b2b8d617c4841d518458
 function draw() {
     if (keyIsDown(UP_ARROW)){
         yRobot -= move;
@@ -65,7 +62,6 @@ function draw() {
     image(img, 100, 100, 54, 62);
 
 
-<<<<<<< HEAD
 
     // oude code -
     // het werkte niet want de snelheid was gewoon nul geworden en als je pijlen gebruikt om te bewegen,
@@ -77,8 +73,7 @@ function draw() {
     // radius is de helft van de cirkel breedte/hoogte
     // en het zwarte randje rondom de cirkel is vijf pixels
     //als de robot het rand aanraakt verplaatsen we die met 2 pixels terug
-=======
->>>>>>> 001365c9ee8e1c8b89d2b2b8d617c4841d518458
+
     // left edge
     if (xRobot < 0 + radius + 5){
         xRobot += move;
@@ -95,13 +90,10 @@ function draw() {
         yRobot -= move;
     }
 
-<<<<<<< HEAD
-=======
 //    if xRobot
 //    if (!(x2 > x1 + lengte || x1 > x2 + lengte || y2 > y1 + breedte || y1 > y2 + breedte)){
 //    //Botsing!
 //    }
->>>>>>> 3dfabe8e50ac83946967b342c777faa2467f7956
 
 
 };
