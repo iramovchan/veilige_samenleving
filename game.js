@@ -27,12 +27,12 @@ function preload() {
 function setup() {
     preload();
     cns = createCanvas(xCnsSize, yCnsSize);
-    centerCanvas()
+    centerCanvas();
 
 }
 
 function windowResized() {
-    centerCanvas()
+    centerCanvas();
 }
 
 
