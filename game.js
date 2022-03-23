@@ -18,19 +18,24 @@ function centerCanvas() {
 
 let img;
 function preload() {
-  img = loadImage('can.png');
+    img = loadImage('can.png');
 }
 
 function setup() {
+    preload();
     cns = createCanvas(xCnsSize, yCnsSize);
     centerCanvas()
-    image(img, 100, 100);
+
 }
 
 function windowResized() {
     centerCanvas()
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 001365c9ee8e1c8b89d2b2b8d617c4841d518458
 function draw() {
     if (keyIsDown(UP_ARROW)){
         yRobot -= move;
@@ -54,8 +59,10 @@ function draw() {
     fill(0, 0, 0);
     ellipse(xRobot, yRobot, 27, 27);
 
+    image(img, 100, 100, 54, 62);
 
 
+<<<<<<< HEAD
 
     // oude code -
     // het werkte niet want de snelheid was gewoon nul geworden en als je pijlen gebruikt om te bewegen,
@@ -67,6 +74,8 @@ function draw() {
     // radius is de helft van de cirkel breedte/hoogte
     // en het zwarte randje rondom de cirkel is vijf pixels
     //als de robot het rand aanraakt verplaatsen we die met 2 pixels terug
+=======
+>>>>>>> 001365c9ee8e1c8b89d2b2b8d617c4841d518458
     // left edge
     if (xRobot < 0 + radius + 5){
         xRobot += move;
