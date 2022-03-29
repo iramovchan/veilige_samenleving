@@ -57,15 +57,27 @@ li a {
     display: inline-block;
     float: left;
 }
+.hover_dinges:hover {
+    color: red;
+}
+.hover_dinges {
+    float: left;
+    margin: 6%;
+    margin-top: 0%;
+    width: 10%;
+    text-align: center;
+}
 
 #big_img {
     width: 25%;
     float: left;
 
 }
-#ira_eline{
-  width: 10%;
-  height: 10%;
+.fotos {
+    width: 12%;
+    height: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 footer {
