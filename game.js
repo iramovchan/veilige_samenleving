@@ -7,8 +7,8 @@ var yRobot = yCnsSize/2;
 var robotWidth = 64;
 var robotHeight = 64;
 
-var blikjeWidth = 54;
-var blikjeHeight = 62;
+var blikjeWidth = 27;
+var blikjeHeight = 31;
 
 var xBlikje = 100;
 var yBlikje = 200;
@@ -39,31 +39,64 @@ function preload() {
 }
 
 
-function setup() {
-    preload();
-    cns = createCanvas(xCnsSize, yCnsSize);
-    centerCanvas();
-
-}
 
 function windowResized() {
     centerCanvas();
 }
 
-//class Can() {
-//    constructor(img, xBlikje, yBlikje, blikjeWidth, blikjeHeight){
-//        this.img = img;
-//        this.xBlikje = xBlikje;
-//        this.yBlikje = yBlikje;
-//        this.blikjeWidth = blikjeWidth;
-//        this.blikjeHeight = blikjeHeight;
-//    }
-//}
-//
-//can_1 = new Can(img, xBlikje, yBlikje, blikjeWidth, blikjeHeight);
+class Can {
+    constructor(img){
+        this.image = img;
+//        this.xBlikje = random(100, xCnsSize - 100);
+//        this.yBlikje = random(100, yCnsSize - 100);
+        this.x = random(2, 12) * 50;
+        this.y = random(2, 8) * 50;
+        this.width = 27;
+        this.height = 31;
+    }
 
+    display() {
+        if (can_collected === false) {
+
+            image(img, this.x, this.y, this.width, this.height);
+
+        }
+    }
+
+}
+
+var cans = [];
+
+function setup() {
+    preload();
+    cns = createCanvas(xCnsSize, yCnsSize);
+    centerCanvas();
+    for (let i = 0; i < 11; i++) {
+        cans[i] = new Can(img);
+
+    }
+
+}
+
+var change_location = false;
 
 function draw() {
+
+//    for (let i = 0; i < cans.length; i++) {
+//        for (let o = 0; o < cans.length; o++) {
+//
+//            if (cans[o].x < cans[i].x + cans[i].width &&
+//            cans[o].x + cans[o].width> cans[i].x &&
+//            cans[o].y < cans[i].y + cans[i].height
+//            && cans[ o].y + cans[o].height > cans[i].y) {
+//
+//                // colliding = true;
+////                can_collected = true;
+//                cans[i].x = random(2, 12) * 50;
+//                cans[i].y = random(2, 8) * 50;
+//            }
+//        }
+//    }
 
     // left edge
     if (xRobot < 0){
@@ -82,10 +115,6 @@ function draw() {
     }
 
 
-//    if (colliding === true) {
-//
-//    }
-
     if (keyIsDown(UP_ARROW)) {
         yRobot -= move;
     } else if (keyIsDown(DOWN_ARROW)) {
@@ -96,100 +125,22 @@ function draw() {
         xRobot += move;
     }
 
-//
-//    if (keyIsDown(LEFT_ARROW)){
-//        xRobot -= move;
-//        if (colliding) {
-//            xBlikje -= blikjeMove;
-//            xRobot = xBlikje + blikjeWidth;
-//
-//        }
-//    } else if (keyIsDown(RIGHT_ARROW)){
-//        xRobot += move;
-//        if (colliding) {
-//            xBlikje += blikjeMove;
-//            xRobot = xBlikje - robotWidth;
-//
-//        }
-//    }
-//
-//
-//    if (keyIsDown(UP_ARROW)){
-//        yRobot -= move;
-//        if (colliding) {
-//            yBlikje -= blikjeMove;
-//            yRobot = yBlikje + blikjeHeight;
-//        }
-//    } else if (keyIsDown(DOWN_ARROW)){
-//        yRobot += move;
-//        if (colliding) {
-//            yBlikje += blikjeMove;
-//            yRobot = yBlikje - robotHeight;
-//        }
-//    }
-
-
-//    if (keyIsDown(UP_ARROW)){
-//        yRobot -= move;
-//        if (colliding) {
-//            yBlikje -= blikjeMove;
-////            yRobot -= 1;
-//        }
-//    } else if (keyIsDown(DOWN_ARROW)){
-//        yRobot += move;
-//        if (colliding) {
-//            yBlikje += blikjeMove;
-////            yRobot -= 1;
-//        }
-//    } else if (keyIsDown(LEFT_ARROW)){
-//        xRobot -= move;
-//        if (colliding) {
-//            xRobot += move;
-//////            if (xRobot + robotWidth > xBlikje ) {
-//////                push_right = true;
-//////            } else
-////            if (xBlikje + blikjeWidth >= xRobot) {
-////                xBlikje -= blikjeMove;
-//////              xRobot += 1;
-//////                push_right = false;
-//            //}
-//
-//        }
-//    } else if (keyIsDown(RIGHT_ARROW)){
-//        xRobot += move;
-//        if (colliding) {
-//            xRobot -= move;
-////            if (xRobot + robotWidth > xBlikje) {
-////                xBlikje += blikjeMove;
-//////              xRobot -= 1;
-//////                push_right = false;
-////
-////            }
-//
-//        }
-//    }
-//
-//    if (keyIsDown("Space")) {
-//        if (colliding === true) {
-//            can_collected = true;
-//        }
-//
-//    }
-//    } else if (keyIsDown(Space)) {
-//
-//    }
 
     colliding = false;
 
 
 
-    if (xRobot < xBlikje + blikjeWidth &&
-        xRobot + robotWidth> xBlikje &&
-        yRobot < yBlikje + blikjeHeight
-        && yRobot + robotHeight > yBlikje) {
+    for (let i = 0; i < 11; i++) {
+        if (xRobot < cans[i].x + cans[i].width &&
+        xRobot + robotWidth> cans[i].x &&
+        yRobot < cans[i].y + cans[i].height
+        && yRobot + robotHeight > cans[i].y) {
 
-        // colliding = true;
-        can_collected = true;
+            // colliding = true;
+            can_collected = true;
+
+        }
+
 
     }
 
@@ -200,9 +151,12 @@ function draw() {
 
 
 
+//
+//    if (can_collected === false) {
 
-    if (can_collected === false) {
-        image(img, xBlikje, yBlikje, blikjeWidth, blikjeHeight);
+
+    for (const i in cans) {
+        cans[i].display();
     }
 
 
