@@ -57,9 +57,7 @@ li a {
     display: inline-block;
     float: left;
 }
-.hover_dinges:hover {
-    color: red;
-}
+
 .hover_dinges {
     float: left;
     margin: 6%;
