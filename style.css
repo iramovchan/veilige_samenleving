@@ -102,3 +102,10 @@ p {
     height: 300px;
     margin: 2%;
 }
+
+iframe {
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+
+}
